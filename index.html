@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки</title>
+  <link rel="stylesheet" href="./vendor/normalize.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <h1 class="header__title">Приложение для ведения заметок</h1>
+  </header>
+  <main class="main">
+    <form class="form" action="#">
+      <button class="button form__button" id="popup-add-note-button" type="button">Добавить заметку</button>
+    </form>
+    <section class="notes">
+      <p class="notes__title">
+        Ваши заметки:
+      </p>
+      <ul class="notes__list">
+        <!-- <li class="notes__item">
+          <button class="button notes__button">Название заметки Название заметки</button>
+        </li> -->
+      </ul>
+    </section>
+    <section class="stack">
+      <h2 class="stack__title">Используемый стек:</h2>
+      <ul class="stack__list">
+        <li class="stack__item">HTML</li>
+        <li class="stack__item">CSS</li>
+        <li class="stack__item">JS</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <ul class="footer__list">
+      <li class="footer__item">
+        <a class="footer__link" href="https://github.com/Taswikaa?tab=repositories" target="_blank" rel="noopener noreferrer">github</a>
+      </li>
+    </ul>
+    <ul class="footer__list">
+      <li class="footer__item">
+        <a class="footer__link" href="mailto:alekseev.s.v1@yandex.ru" target="_blank" rel="noopener noreferrer">alekseev.s.v1@yandex.ru</a>
+      </li>
+    </ul>
+  </footer>
+  <div class="popup" id="popup-read-note">
+    <div class="popup__container">
+      <h2 class="popup__title">Название</h2>
+      <p class="popup__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae porro minus sint, facilis nostrum et officiis blanditiis vitae libero consequatur numquam tempora reiciendis placeat id provident esse quibusdam omnis. Animi sit cumque, ducimus, eius repellendus deserunt architecto deleniti culpa cupiditate temporibus eum adipisci fugiat voluptates earum, esse illum magni explicabo reiciendis accusantium eveniet porro ratione asperiores. Provident veniam magni inventore recusandae perspiciatis asperiores voluptate, consectetur ab velit hic. Maxime saepe error nemo labore totam inventore.</p>
+      <button class="button popup__close" type="button"></button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-add-note">
+    <div class="popup__container">
+      <h2 class="popup__title">Новая заметка</h2>
+      <form class="popup__form" id="popup-add-note-form" action="#">
+        <input class="popup__form-input" name="input" type="text" placeholder="Название">
+        <textarea class="popup__form-textarea" name="textarea" id="" rows="20" placeholder="Текст"></textarea>
+        <button class="button popup__form-button" type="submit" name="submit">Сохранить</button>
+      </form>
+      <button class="button popup__close" type="button"></button>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+  <script type="module" src="./modules/NotesList.js"></script>
+  <script type="module" src="./modules/Note.js"></script>
+</body>
+</html>
