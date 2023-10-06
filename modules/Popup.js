@@ -9,9 +9,13 @@ export default class Popup {
     this._selector.classList.remove('popup_open');
   }
 
+  _open() {
+    this._selector.classList.add('popup_open');
+  }
+
   setEventListeners() {
     this._openButton.addEventListener('click', () => {
-      this._selector.classList.add('popup_open');
+      this._open();
     })
 
     this._closeButton.addEventListener('click', () => {

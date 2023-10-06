@@ -19,6 +19,9 @@ export default class AddPopup extends Popup {
     note.saveNote();
     new NotesList(document.querySelector('.notes__list')).renderNewNote();
 
+    this._input.value = '';
+    this._textArea.value = '';
+
     this._close();
   }
 
@@ -35,6 +38,5 @@ export default class AddPopup extends Popup {
       this._submit(e);
     })
   }
-
   
 }

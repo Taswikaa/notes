@@ -1,5 +1,5 @@
 import Note from "./Note.js";
-import Popup from "./Popup.js"
+import ReadNotePopup from "./ReadNotePopup.js";
 
 export default class NotesList {
   constructor(selector) {
@@ -19,10 +19,17 @@ export default class NotesList {
   }
 
   _makeNoteIsPopup() {
-    this._notes.forEach(el => {
+    const savedNotes = JSON.parse(localStorage.getItem('notes'));
+
+    console.log(savedNotes);
+
+    this._notes.forEach((el, i) => {
+      const title = savedNotes[i].title;
+      const body = savedNotes[i].body;
+
       const readNotePopupSelector = document.querySelector('#popup-read-note');
       const readNotePopupOpenButtonSelector = el;
-      const readNotePopup = new Popup(readNotePopupSelector, readNotePopupOpenButtonSelector);
+      const readNotePopup = new ReadNotePopup(readNotePopupSelector, readNotePopupOpenButtonSelector, title, body);
 
       readNotePopup.setEventListeners();
     })
