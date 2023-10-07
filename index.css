@@ -67,14 +67,50 @@ ul {
   align-items: center;
 }
 
+.notes__item {
+  position: relative;
+}
+
 .notes__button {
   background-color: #323232;
   color: #DDD0C8;
   font-size: 18px;
-  max-width: 282px;
+  max-width: 242px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.notes__button_puprose_delete {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  right: -30px;
+  top: 9px;
+}
+
+.notes__button_puprose_delete::after {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 2px;
+  transform: rotate(-45deg);
+  background-color: #540000;
+  left: 0;
+  top: 50%;
+}
+
+.notes__button_puprose_delete::before {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 2px;
+  transform: rotate(45deg);
+  background-color: #540000;
+  left: 0;
+  top: 50%;
 }
 
 .stack {

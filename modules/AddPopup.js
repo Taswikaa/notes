@@ -12,9 +12,15 @@ export default class AddPopup extends Popup {
   }
 
   _submit(e) {
-    e.preventDefault()
+    e.preventDefault();
+
+    // const noteIndex = localStorage.getItem('notes') ?
+    //   JSON.parse(localStorage.getItem('notes')).length :
+    //   0;
+
+    const noteIndex = Math.floor(Math.random() * 1e17);
     
-    const note = new Note(this._input.value, this._textArea.value);
+    const note = new Note(this._input.value, this._textArea.value, noteIndex);
 
     note.saveNote();
     new NotesList(document.querySelector('.notes__list')).renderNewNote();

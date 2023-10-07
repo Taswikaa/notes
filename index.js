@@ -14,5 +14,3 @@ const addNotePopup = new AddPopup(addNotePopupSelector, addNotePopupOpenButtonSe
 noteList.render();
 
 addNotePopup.setEventListeners();
-
-

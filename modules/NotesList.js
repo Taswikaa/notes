@@ -11,7 +11,7 @@ export default class NotesList {
     if (localStorage.getItem('notes')) {
       const savedNotes = JSON.parse(localStorage.getItem('notes'));
       const notes = savedNotes.map(el => {
-        return new Note(el.title, el.body).createNote();
+        return new Note(el.title, el.body).createNote(el.id);
       })
 
       return notes;
@@ -20,8 +20,6 @@ export default class NotesList {
 
   _makeNoteIsPopup() {
     const savedNotes = JSON.parse(localStorage.getItem('notes'));
-
-    console.log(savedNotes);
 
     this._notes.forEach((el, i) => {
       const title = savedNotes[i].title;
@@ -39,15 +37,34 @@ export default class NotesList {
     if (localStorage.getItem('notes')) {
       this._makeNoteIsPopup();
       this._notes.forEach(el => {
+        const deleteButton = el.querySelector('.notes__button_puprose_delete');
+
+        deleteButton.addEventListener('click', e => {
+          this._deleteNote(e, deleteButton);
+        })
+
         this._selector.appendChild(el);
       })
     }
-  }  
+  }
 
   renderNewNote() {
-    const note = this._notes[this._notes.length - 1];
+    this._selector.replaceChildren(...[]);
 
-    this._makeNoteIsPopup();
-    this._selector.appendChild(note);
+    this.render();
+  }
+
+  _deleteNote(e, selector) {
+    e.stopPropagation();
+
+    const note = selector.closest('.notes__item');
+    const notes = JSON.parse(localStorage.getItem('notes'));
+    const newNotes = notes.filter(el => {
+      return el.id !== note.id * 1;
+    })
+
+    localStorage.setItem('notes', JSON.stringify(newNotes));
+
+    note.remove();
   }
 }
