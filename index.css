@@ -182,6 +182,10 @@ ul {
   right: -25px;
 }
 
+.footer__link_purpose_mail::after {
+  background-image: url(./images/email-1-svgrepo-com.svg);
+}
+
 .popup {
   display: flex;
   position: fixed;
