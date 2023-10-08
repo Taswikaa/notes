@@ -113,6 +113,18 @@ ul {
   top: 50%;
 }
 
+.notes__button_puprose_change {
+  position: absolute;
+  left: -30px;
+  top: 9px;
+  border: none;
+  background-image: url(./images/pencil-svgrepo-com.svg);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background-size: cover;
+}
+
 .stack {
   display: flex;
   flex-direction: column;

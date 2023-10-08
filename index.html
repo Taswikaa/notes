@@ -20,10 +20,11 @@
         Ваши заметки:
       </p>
       <ul class="notes__list">
-        <li class="notes__item">
-          <!-- <button class="button notes__button">Название заметки Название заметки</button>
-          <button class="button notes__button_puprose_delete"></button> -->
-        </li>
+        <!-- <li class="notes__item">
+          <button class="button notes__button">Название заметки Название заметки</button>
+          <button class="button notes__button_puprose_delete"></button>
+          <button class="button notes__button_puprose_change"></button>
+        </li> -->
       </ul>
     </section>
     <section class="stack">
@@ -54,7 +55,6 @@
       <button class="button popup__close" type="button"></button>
     </div>
   </div>
-
   <div class="popup" id="popup-add-note">
     <div class="popup__container">
       <h2 class="popup__title">Новая заметка</h2>
@@ -66,6 +66,19 @@
       <button class="button popup__close" type="button"></button>
     </div>
   </div>
+  <template id="popup-change-note-template">
+    <div class="popup" id="popup-change-note">
+      <div class="popup__container">
+        <h2 class="popup__title">Редактирование</h2>
+        <form class="popup__form" id="popup-change-note-form" action="#">
+          <input class="popup__form-input" name="input" type="text" placeholder="Название">
+          <textarea class="popup__form-textarea" name="textarea" id="" rows="20" placeholder="Текст"></textarea>
+          <button class="button popup__form-button" type="submit" name="submit">Сохранить</button>
+        </form>
+        <button class="button popup__close" type="button"></button>
+      </div>
+    </div>
+  </template>
   <script type="module" src="./index.js"></script>
   <script type="module" src="./modules/NotesList.js"></script>
   <script type="module" src="./modules/Note.js"></script>

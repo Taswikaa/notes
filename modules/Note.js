@@ -24,6 +24,7 @@ export default class Note {
     const note = document.createElement('li');
     const noteTitle = document.createElement('button');
     const deleteButton = document.createElement('button');
+    const changeButton = document.createElement('button');
 
     note.classList.add('notes__item');
     note.id = id;
@@ -32,9 +33,12 @@ export default class Note {
     noteTitle.textContent = this._title;
     deleteButton.classList.add('button');
     deleteButton.classList.add('notes__button_puprose_delete');
+    changeButton.classList.add('button');
+    changeButton.classList.add('notes__button_puprose_change');
 
     note.appendChild(noteTitle);
     note.appendChild(deleteButton);
+    note.appendChild(changeButton);
 
     return note;
   }
